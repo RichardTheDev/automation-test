@@ -43,7 +43,7 @@ def display_data():
         # "Bulletins":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: Le salaire Brut Annuel du bulletin de salaire.Montre moi le resultat sous forme de json",
         # "Dotations": "Prompt for option 3"
     }
-    selected_option = st.selectbox("Select the prompt option:", list(prompt_options.keys()))
+    selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
 
     uploaded_pdf = st.file_uploader("Upload PDF", type=["pdf"])
 
