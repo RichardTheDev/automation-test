@@ -13,6 +13,8 @@ async def process_text(text, prompt):
         async with aiohttp.ClientSession() as session:
             payload = {
                 'model': 'gpt-3.5-turbo',
+                "temperature": 0,
+                # "response_format": {"type": "json_object"},
                 'messages': [
                     {'role': 'system', 'content': prompt},
                     {'role': 'user', 'content': text}
@@ -21,6 +23,7 @@ async def process_text(text, prompt):
 
             headers = {'Authorization': f'Bearer {api_key}'}
             async with session.post('https://api.openai.com/v1/chat/completions', json=payload, headers=headers) as response:
+                print(response)
                 response_data = await response.json()
                 return response_data
     except Exception as error:
@@ -39,7 +42,7 @@ def display_data():
 
     # Prompts selection
     prompt_options = {
-        "Conserto":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: la date, le numero de fatcure,l'objet de la prestation,le Libelle, le total HT et le siren.Montre moi le resultat sous forme de json",
+        "Conserto":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: la date, le numero de fatcure,l'objet de la prestation,le Libelle, le total HT et le siren.Montre moi le resultat sous forme de json.montre aue le json",
         # "Bulletins":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: Le salaire Brut Annuel du bulletin de salaire.Montre moi le resultat sous forme de json",
         # "Dotations": "Prompt for option 3"
     }
