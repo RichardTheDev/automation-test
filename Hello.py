@@ -38,11 +38,11 @@ def extract_text_from_pdf(uploaded_pdf):
     return text
 
 def display_data():
-    st.title("Scann PDF Demo - AUDITEX")
+    st.title("Scann PDF Demo - UPDEV&AUDITEX")
 
     # Prompts selection
     prompt_options = {
-        "Conserto":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: la date, le numero de fatcure,l'objet de la prestation,le Libelle, le total HT et le siren.Montre moi le resultat sous forme de json.montre aue le json",
+        "Conserto":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: la date, le numero de fatcure,l'objet de la prestation,le Libelle(le libelle doit etre ecris exactment comme sur le pdf), le total HT et le siren.Montre moi le resultat sous forme de json.montre que le json",
         # "Bulletins":"Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: Le salaire Brut Annuel du bulletin de salaire.Montre moi le resultat sous forme de json",
         # "Dotations": "Prompt for option 3"
     }
