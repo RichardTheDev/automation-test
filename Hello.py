@@ -60,10 +60,10 @@ def display_data():
         if uploaded_pdf:
             pdf_text = extract_text_from_pdf(uploaded_pdf)
             selected_prompt = prompt_options[selected_option]
-            if len(pdf_text) < 100:
-                response_data = asyncio.run(process_text(pdf_text, selected_prompt))
-            else:
-               #Here
+            # if len(pdf_text) < 100:
+            response_data = asyncio.run(process_text(pdf_text, selected_prompt))
+            # else:
+            #    #Here
             if response_data:
                 st.json(response_data['choices'][0]['message']['content'])
             else:
