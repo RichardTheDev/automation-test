@@ -45,7 +45,7 @@ def display_data():
     prompt_options = {
         "Factures": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf , les infofrmatiosn suivantes: la date, le numero de fatcure,l'objet de la prestation,le Libelle(le libelle doit etre ecris exactment comme sur le pdf), le total HT et le siren.Montre moi le resultat sous forme de json.montre que le json",
         "CV": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf qui represente un CV , les informations suivantes uniquement: 1- Le plus haut diplome (Ex master ou bsc), 2 - le nom de l'ecole 3 - l'annee dobtention  .Montre moi le resultat sous forme de json uniquement sinon ca va pas marcher",
-        "Bulletin": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf qui represente un BUlletin de paie , les informations suivantes uniquement: 1- Nom prenom, 2- Emploie ,3- Cadre,4- Salaire Brut .Montre moi le resultat sous forme de json uniquement sinon ca va pas marcher",
+        "Bulletin": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf qui represente un BUlletin de paie , les informations suivantes uniquement: 1- Nom prenom, 2- Emploie ,3- Poste (Cadre),4- Salaire Brut .Montre moi le resultat sous forme de json uniquement sinon ca va pas marcher",
     }
 
     selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
