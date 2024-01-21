@@ -39,7 +39,7 @@ def extract_text_from_pdf(uploaded_pdf):
     return text
 
 def display_data():
-    st.title("Scann PDF Demo - Laziz tech & AUDITEX")
+    st.title("Scan PDF Demo - AUDITEX")
 
     # Prompts selection
     prompt_options = {
