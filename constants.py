@@ -93,13 +93,7 @@ Etape 2:
 Repond au formulaire en attribuant les reponses au champs json si tu trouves pas les donnes ecris "Not found"
  {
     "Name": "Name of the startup",Generally the name at the beginig of the explanantion
-    "Valuation": "Current pre-money valuation of the startup",
     "Sector": "Specific industry or sector of the startup",
-    "Stage": "Current stage of the startup (e.g., Seed, Series A, etc.)",
-    "Revenue": "Most recent annual or projected revenue",
-    "Burn Rate": "Current monthly burn rate",
-    "Total Funding": "Total capital raised to date",
-    "Key Investors": "Notable investors or investment firms involved",
     "Product": "Brief description of the main product or service",
     "Unique Value Proposition": "Key differentiator or competitive advantage",
     "Market Size": "Estimated size and growth rate of the target market",
@@ -107,7 +101,13 @@ Repond au formulaire en attribuant les reponses au champs json si tu trouves pas
     "Team": "Brief overview of the founding team’s background and key roles",
     "Traction": "Key metrics or milestones achieved",
     "Investment Ask": "Amount of funding being sought and intended use of funds",
-    "Exit Strategy": "Potential exit scenarios and targets"
+    "Exit Strategy": "Potential exit scenarios and targets",
+    "Valuation": "Current pre-money valuation of the startup",
+    "Stage": "Current stage of the startup (e.g., Seed, Series A, etc.)",
+    "Revenue": "Most recent annual or projected revenue",
+    "Burn Rate": "Current monthly burn rate",
+    "Total Funding": "Total capital raised to date",
+    "Key Investors": "Notable investors or investment firms involved",
 }
 
  SI le pdf n'est pas un pitch deck renvoie l'explication courte sous forme de json exemple:
