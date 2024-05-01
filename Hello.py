@@ -7,6 +7,7 @@ from PyPDF2 import PdfReader
 import io
 import pandas as pd
 import json
+from constants import SYS_DECK ,SYS_DECK_2
 
 # Replace with your actual OpenAI API key
 api_key = st.secrets["openaikey"]
@@ -39,7 +40,7 @@ def extract_text_from_pdf(uploaded_pdf):
     return text
 
 def display_data():
-    st.title("Scann PDF Demo - Laziz tech & AUDITEX")
+    st.title("Scann PITCH DECK - demo")
 
     # Prompts selection
     prompt_options = {
@@ -48,13 +49,13 @@ def display_data():
         "Bulletin": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf qui represente un BUlletin de paie , les informations suivantes uniquement: 1- Nom prenom, 2- Emploie ,3- Cadre ,4- Salaire Brut .Montre moi le resultat sous forme de json uniquement sinon ca va pas marcher",
     }
 
-    selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
+    # selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
     uploaded_pdf = st.file_uploader("Upload PDF", type=["pdf"])
 
     if st.button("Process PDF"):
         if uploaded_pdf:
             pdf_text = extract_text_from_pdf(uploaded_pdf)
-            selected_prompt = prompt_options[selected_option]
+            selected_prompt = SYS_DECK_2
             response_data = asyncio.run(process_text(pdf_text, selected_prompt))
             print(response_data)
 
@@ -65,7 +66,7 @@ def display_data():
                 try:
                     # Try to parse the data string as JSON
                     json_data = json.loads(data)
-
+                    st.json(json_data)
                     # Check if json_data is a dictionary and convert it to a DataFrame
                     if isinstance(json_data, dict):
                         df = pd.DataFrame([json_data])  # Create a DataFrame from a single dictionary
