@@ -49,7 +49,7 @@ def display_data():
         "Bulletin": "Vous êtes un assistant qui va extraire des textes qu ont vous fournie qui sont des textes extraies de pdf qui represente un BUlletin de paie , les informations suivantes uniquement: 1- Nom prenom, 2- Emploie ,3- Cadre ,4- Salaire Brut .Montre moi le resultat sous forme de json uniquement sinon ca va pas marcher",
     }
 
-    # selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
+    #selected_option = st.selectbox("Select the pdf option:", list(prompt_options.keys()))
     uploaded_pdf = st.file_uploader("Upload PDF", type=["pdf"])
 
     if st.button("Process PDF"):
